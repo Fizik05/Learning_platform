@@ -1,2 +1,20 @@
-# Learning_platform
-This project for testing exercise
+# Learning Platform
+## Эта платформа для обучения и просмотра видеороликов
+____
+## Развёртывание backend
+- Для того, чтобы развернуть этот проект у себя на ПК нужно открыть терминал и вбить команду ```git clone https://github.com/Fizik05/Learning_platform.git```
+- Далее устанавливаем виртуальное окружение в корневую папку проекта ```python -m venv venv```
+- После активируем его ```source venv/Scripts/activate```, обновляем PIP ```python -m pip install --upgrade pip``` и устанавливаем зависимости ```pip install -r requirements.txt```
+- После переходим в директорию learning_platform, используя команду ```cd learning_platform/``` в терминале, проводим миграции ```python manage.py migrate```
+- В конечном счёте поднимаем наш проект локально ```python manage.py runserver```
+- При разработке этого проекта я использовал PastMan и работал полностью с JSON-форматом
+____
+## Заполнение Базы Данных
+- Для начала сделайте несколько POST-запросов по адресу ```http://127.0.0.1:8000/lesson/``` для создания уроков. Нужно передать такие поля, как "title", "video_link", "duration". Для обновления конкретного видеоурока нужно передать ещё и "viewing_time".
+- Далее нужно создать продукты. Отправьте несколько POST-запросов по адресу ```http://127.0.0.1:8000/product/```. Необходимые поля: "title", "access", "lessons". В поля "access" и "title" нужно передавать "username" и "title" соответственно.
+- Получить статистику можно по адресу ```http://127.0.0.1:8000/product/statisticks/```
+____
+## Системные требования
+- Python=3.7+
+- PIP=23.1.2
+____
